@@ -41,6 +41,14 @@ signal username_set
 @warning_ignore("unused_signal")
 signal task_succeeded
 @warning_ignore("unused_signal")
+signal up_pressed
+@warning_ignore("unused_signal")
+signal down_pressed
+@warning_ignore("unused_signal")
+signal right_pressed
+@warning_ignore("unused_signal")
+signal left_pressed
+@warning_ignore("unused_signal")
 signal task_failed
 @warning_ignore("unused_signal")
 signal levelInfoPressed
@@ -48,3 +56,5 @@ signal levelInfoPressed
 signal online_times_ready
 @warning_ignore("unused_signal")
 signal shotDirection
+@warning_ignore("unused_signal")
+signal current_aiming_force

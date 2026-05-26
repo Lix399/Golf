@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://jexbmnkfk1gm"]
+
+[ext_resource type="Texture2D" uid="uid://cocf65vfn64bd" path="res://graphics/sprites/Level1.png" id="1_ecr63"]
+[ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="2_n34uq"]
+[ext_resource type="PackedScene" uid="uid://dile4novdhrtd" path="res://scenes/Player.tscn" id="3_kbo48"]
+[ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="4_4dyl1"]
+[ext_resource type="PackedScene" uid="uid://yn6rxu5yet5h" path="res://scenes/Crosshair.tscn" id="5_jxjwb"]
+[ext_resource type="Script" uid="uid://c3m4bicdgmwjo" path="res://scripts/crosshair.gd" id="6_2meft"]
+[ext_resource type="Script" uid="uid://f6yfsvyof6ud" path="res://scripts/aiming_line.gd" id="7_0xqs2"]
+[ext_resource type="PackedScene" uid="uid://bejhghwhwjy27" path="res://scenes/BallBounds.tscn" id="8_ipmer"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_64wtg"]
+
+[node name="Level" type="Node2D" unique_id=1729351582]
+
+[node name="MapSprite" type="Sprite2D" parent="." unique_id=2106913616]
+texture = ExtResource("1_ecr63")
+
+[node name="LevelStaticBody2D" type="StaticBody2D" parent="." unique_id=39852520]
+physics_material_override = SubResource("PhysicsMaterial_64wtg")
+
+[node name="Island1" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=1235371322]
+polygon = PackedVector2Array(142, -500, 140, -499, 139, -498, 139, -493, 169, -444, 178, -441, 186, -437, 196, -430, 204, -422, 211, -412, 215, -411, 219, -409, 223, -404, 233, -404, 237, -407, 243, -410, 250, -412, 254, -415, 258, -417, 263, -418, 266, -418, 268, -420, 271, -425, 275, -433, 285, -434, 293, -439, 298, -444, 299, -448, 300, -452, 306, -463, 308, -474, 308, -483, 312, -497, 311, -499, 309, -500)
+
+[node name="Island2" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=1208869741]
+position = Vector2(-191, 177)
+polygon = PackedVector2Array(68, -481, 384, -481, 387, -480, 389, -478, 390, -475, 389, -471, 363, -434, 333, -435, 311, -433, 295, -429, 285, -425, 280, -421, 274, -418, 260, -417, 240, -417, 219, -418, 192, -419, 182, -416, 173, -412, 133, -393, 124, -390, 117, -389, 113, -391, 111, -394, 108, -398, 97, -423, 93, -428, 90, -430, 86, -433, 81, -434, 79, -435, 61, -472, 61, -477, 63, -479, 65, -480)
+
+[node name="Island3" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=1359887878]
+position = Vector2(-941, 571)
+polygon = PackedVector2Array(-40, -548, -36, -551, -30, -553, 114, -553, 119, -551, 123, -548, 162, -480, 166, -477, 237, -477, 276, -543, 278, -546, 279, -548, 283, -551, 287, -553, 498, -553, 503, -551, 506, -549, 509, -546, 549, -398, 549, -395, 548, -389, 545, -385, 542, -382, 317, -321, 119, -322, -40, -366, -43, -544)
+
+[node name="Island4" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=521194485]
+position = Vector2(-561, 780)
+polygon = PackedVector2Array(26, -349, 154, -483, 263, -427, 416, -514, 486, -429, 553, -515, 658, -451, 658, -294, 650, -290, 570, -367, 487, -310, 355, -364, 156, -257, 33, -228, 26, -231)
+
+[node name="Island5" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=183582788]
+position = Vector2(-561, 780)
+polygon = PackedVector2Array(703, -455, 797, -585, 934, -458, 985, -552, 1053, -468, 1153, -572, 1256, -415, 1230, -326, 1081, -278, 834, -362, 742, -287, 707, -288)
+
+[node name="Island6" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=928837595]
+position = Vector2(-561, 780)
+polygon = PackedVector2Array(178, -86, 661, -87, 670, -49, 694, -50, 699, -86, 1117, -87, 1186, -21, 1378, -87, 1432, -86, 1544, 67, 1406, 194, 1250, 155, 917, 193, 45, 194, -56, 28, -56, 21, 33, -87, 99, -46)
+
+[node name="LevelObjects" type="Node" parent="." unique_id=1103760741]
+
+[node name="Hole" parent="LevelObjects" unique_id=249608344 instance=ExtResource("2_n34uq")]
+position = Vector2(120, 715)
+
+[node name="Player" parent="LevelObjects" unique_id=689137981 instance=ExtResource("3_kbo48")]
+position = Vector2(234.00002, -561.99994)
+
+[node name="Ball" parent="LevelObjects" unique_id=1546105679 instance=ExtResource("4_4dyl1")]
+position = Vector2(233.99998, -511.99994)
+
+[node name="Crosshair" parent="LevelObjects" unique_id=2046676485 instance=ExtResource("5_jxjwb")]
+visible = false
+script = ExtResource("6_2meft")
+
+[node name="AimingLine2D" type="Line2D" parent="LevelObjects" unique_id=1758827418]
+visible = false
+width = 4.0
+default_color = Color(1, 1, 1, 0.8235294)
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("7_0xqs2")
+
+[node name="BallBounds" parent="." unique_id=847579443 instance=ExtResource("8_ipmer")]
+position = Vector2(399, 517)
+
+[node name="Collision" parent="BallBounds" index="0" unique_id=520957345]
+position = Vector2(-361, 182)
+build_mode = 1
+polygon = PackedVector2Array(-1963, 572, -1939, -2284, 1590, -2308, 1596, 548)
+
+[editable path="BallBounds"]

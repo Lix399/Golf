@@ -8,6 +8,19 @@ func _ready() -> void:
 	Signals.isDragging.connect(on_isDragging)
 	Signals.shot.connect(on_shot)
 	Signals.shotDirection.connect(on_shotDirection)
+	Signals.current_aiming_force.connect(on_current_aiming_force)
+	Signals.released.connect(on_released)
+
+func on_released():
+	frame = 0
+
+func on_current_aiming_force(aimingForceArg):
+	if aimingForceArg.length() < 150:
+		frame = 1
+	elif aimingForceArg.length() < 300:
+		frame = 2
+	else:
+		frame = 3
 
 func on_shotDirection(shootingRight):
 	if shootingRight:

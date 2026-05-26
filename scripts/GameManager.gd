@@ -1,6 +1,6 @@
 extends Node
 
-const NUMBER_OF_LEVELS = 1
+const NUMBER_OF_LEVELS = 2
 
 const SAVE_PATH = "user://save.tres"
 var saveData : SaveGame = null
@@ -25,7 +25,7 @@ var saveData : SaveGame = null
 @onready var aimingForce : Vector2
 @onready var dragStart : Vector2
 @onready var maxForceVector : float = 500
-@onready var forceMult_normal : float = 2.1
+@onready var forceMult_normal : float = 2.4
 @onready var forceMult_crazy : float = 6
 @onready var username : String = ""
 
@@ -36,8 +36,10 @@ func _ready() -> void:
 	#crea o carica i dati di salvataggio
 	if ResourceLoader.exists(SAVE_PATH):
 		saveData = ResourceLoader.load(SAVE_PATH, "", ResourceLoader.CACHE_MODE_IGNORE)
+		print("Size: " + str(saveData.times.size()))
 	else:
 		saveData = SaveGame.new()
+		ResourceSaver.save(saveData, SAVE_PATH)
 
 func connect_signals():
 	Signals.shot.connect(on_shot)
@@ -58,17 +60,27 @@ func connect_signals():
 	Signals.username_set.connect(on_username_set)
 	Signals.levelInfoPressed.connect(on_levelInfoPressed)
 	Signals.shotDirection.connect(on_shotDirection)
+	Signals.current_aiming_force.connect(on_current_aiming_force)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	#print("SaveData: ", saveData.times.get(0))
-	pass
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_pressed("Up"):
+		Signals.up_pressed.emit()
+	if Input.is_action_pressed("Down"):
+		Signals.down_pressed.emit()
+	if Input.is_action_pressed("Left"):
+		Signals.left_pressed.emit()
+	if Input.is_action_pressed("Right"):
+		Signals.right_pressed.emit()
 
 func _input(input: InputEvent) -> void:
 	if input.is_action_pressed("Escape"):
 		Signals.esc.emit()
 	if input.is_action_pressed("F11"):
 		setFullscreen()
+
+func on_current_aiming_force(aimingForceArg):
+	self.aimingForce = aimingForceArg
 
 func on_levelInfoPressed(levelPressed):
 	if Cloud.conn_established == 0:

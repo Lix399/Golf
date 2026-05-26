@@ -1,11 +1,41 @@
 extends Camera2D
-
+@onready var areas = [$AreaUp, $AreaDown, $AreaRight, $AreaLeft]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Signals.up_pressed.connect(on_up_pressed)
+	Signals.down_pressed.connect(on_down_pressed)
+	Signals.right_pressed.connect(on_right_pressed)
+	Signals.left_pressed.connect(on_left_pressed)
 
+func on_up_pressed():
+	global_position.y += -6
+
+func on_down_pressed():
+	global_position.y += +6
+
+func on_right_pressed():
+	global_position.x += +6
+
+func on_left_pressed():
+	global_position.x += -6
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(_delta: float) -> void:
+	for i in 4:
+		var bodies = areas.get(i).get_overlapping_bodies()
+		
+		for body in bodies:
+			if body.is_in_group("Ball") :
+				if i == 0:
+					global_position.y += -10
+				if i == 1:
+					global_position.y += +10
+				if i == 2:
+					global_position.x += 10
+				if i == 3:
+					global_position.x += -10

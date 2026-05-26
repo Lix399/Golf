@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://co3fnrqiw5m00"]
 
-[ext_resource type="Texture2D" uid="uid://j4d7a4n55drq" path="res://graphics/sprites/Level0.png" id="1_qifjx"]
+[ext_resource type="Texture2D" uid="uid://dmcjjfs5url1n" path="res://graphics/sprites/Level0.png" id="1_qifjx"]
 [ext_resource type="PackedScene" uid="uid://dile4novdhrtd" path="res://scenes/Player.tscn" id="2_dke22"]
 [ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="4_faw0r"]
@@ -11,7 +11,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_64wtg"]
 
-[node name="Level0" type="Node2D" unique_id=1729351582]
+[node name="Level" type="Node2D" unique_id=1729351582]
 
 [node name="MapSprite" type="Sprite2D" parent="." unique_id=2106913616]
 texture = ExtResource("1_qifjx")
@@ -68,6 +68,6 @@ position = Vector2(399, 517)
 [node name="Collision" parent="BallBounds" index="0" unique_id=520957345]
 position = Vector2(-361, 182)
 build_mode = 1
-polygon = PackedVector2Array(-998, -159, -996, -1939, 925, -1939, 922, -159)
+polygon = PackedVector2Array(-1567, 82, -1544, -2004, 1586, -1972, 1581, 46)
 
 [editable path="BallBounds"]

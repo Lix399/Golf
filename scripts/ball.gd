@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		GameManager.coolDownTimeLeft = cooldown.time_left
 		
 	if dragging:
-		GameManager.aimingForce = shootingForce()
+		Signals.current_aiming_force.emit(shootingForce())
 	
 func checkBallSpeedForCooldown() -> void:
 	speed = linear_velocity.length()
@@ -91,7 +91,7 @@ func mouseReleased() -> void:
 func shootingForce() -> Vector2:
 	var currentMousePosition = get_global_mouse_position()
 	
-	if abs(currentMousePosition.x) < abs(dragStart.x):
+	if currentMousePosition.x < dragStart.x:
 		shootingRight = true
 	else:
 		shootingRight = false

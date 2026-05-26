@@ -275,6 +275,7 @@ offset_left = -210.41676
 offset_top = 97.91672
 offset_right = 605.00006
 offset_bottom = 228.91672
+theme_override_constants/separation = 54
 alignment = 1
 
 [node name="Level0" type="VBoxContainer" parent="MainMenuGUI/LevelSelect/Row1" unique_id=1412233579]
@@ -311,6 +312,43 @@ expand_icon = true
 [node name="LevelLabel" type="Label" parent="MainMenuGUI/LevelSelect/Row1/Level0" unique_id=321532261]
 layout_mode = 2
 text = "1"
+label_settings = SubResource("LabelSettings_l72w3")
+horizontal_alignment = 1
+
+[node name="Level1" type="VBoxContainer" parent="MainMenuGUI/LevelSelect/Row1" unique_id=1997927900]
+layout_mode = 2
+alignment = 1
+
+[node name="LevelButton" type="Button" parent="MainMenuGUI/LevelSelect/Row1/Level1" unique_id=1025039298]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+icon = ExtResource("3_2wh52")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="LevelLabel" type="Label" parent="MainMenuGUI/LevelSelect/Row1/Level1" unique_id=1644922962]
+layout_mode = 2
+text = "2"
 label_settings = SubResource("LabelSettings_l72w3")
 horizontal_alignment = 1
 
@@ -443,7 +481,6 @@ label_settings = SubResource("LabelSettings_2wh52")
 horizontal_alignment = 1
 
 [node name="YourTime" type="Label" parent="MainMenuGUI/LevelInfo/YourRecordsLabel" unique_id=654771649]
-visible = false
 visibility_layer = 512
 z_index = 10
 layout_mode = 0
@@ -456,6 +493,7 @@ size_flags_vertical = 0
 text = "Time xxx"
 label_settings = SubResource("LabelSettings_826wr")
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="OnlineRecordsLabel" type="Label" parent="MainMenuGUI/LevelInfo" unique_id=301102757]
 visible = false
@@ -552,6 +590,7 @@ wait_time = 3.0
 [connection signal="pressed" from="MainMenuGUI/MainButtons/UsernameBtn" to="." method="_on_username_btn_pressed"]
 [connection signal="text_submitted" from="MainMenuGUI/MainButtons/UsernameBtn/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="MainMenuGUI/LevelSelect/Row1/Level0/LevelButton" to="." method="_on_level_pressed" binds= [0]]
+[connection signal="pressed" from="MainMenuGUI/LevelSelect/Row1/Level1/LevelButton" to="." method="_on_level_pressed" binds= [1]]
 [connection signal="pressed" from="MainMenuGUI/LevelSelect/LevelSelectBack" to="." method="_on_level_select_back_pressed"]
 [connection signal="pressed" from="MainMenuGUI/LevelInfo/LevelInfoButtons/Play" to="." method="_on_play_level_pressed"]
 [connection signal="pressed" from="MainMenuGUI/LevelInfo/LevelInfoButtons/Back" to="." method="_on_level_info_back_pressed"]

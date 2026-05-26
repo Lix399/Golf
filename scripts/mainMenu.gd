@@ -30,6 +30,9 @@ func _ready() -> void:
 	if !GameManager.username.is_empty():
 		username_label.visible = false
 		username_btn.visible = false
+	
+	if Cloud.conn_established == 0:
+		$MainMenuGUI/LevelInfo/OnlineRecordsLabel.visible = true
 
 func on_online_times_ready():
 	var times = GameManager.level_online_times
@@ -40,14 +43,17 @@ func on_online_times_ready():
 		if duplicate != online_record_model:
 			duplicate.queue_free()
 	
-	#aggiunge i tempi duplicando un modello
-	for i in range(times.size()):
-		if i == 0:
-			online_record_model.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
-		else:
-			var copy = online_record_model.duplicate()
-			copy.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
-			online_times_container.add_child(copy)
+	#aggiunge i tempi duplicando un modello, se ce ne e' almeno 1
+	if times.size() > 0:
+		for i in range(times.size()):
+			if i == 0:
+				online_record_model.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
+			else:
+				var copy = online_record_model.duplicate()
+				copy.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
+				online_times_container.add_child(copy)
+	else:
+		online_record_model.text = "Non ci sono record online!"
 
 func on_conn_established():
 	print("Main menu conn established")
@@ -107,7 +113,10 @@ func _on_level_pressed(levelPressed) -> void:
 	var iconPath = "res://graphics/sprites/level icons/Level" + str(selectedLevel) + "Icon.png"
 	levelIcon.texture = load(iconPath)
 	levelInfo.visible = true
-	your_time.text = str(GameManager.saveData.times.get(selectedLevel))
+	if GameManager.saveData.times.get(selectedLevel) > 0:
+		your_time.text = str(GameManager.saveData.times.get(selectedLevel))
+	else:
+		your_time.text = "record non ancora salvato"
 	your_time.visible = true
 
 func _on_exit_pressed() -> void:

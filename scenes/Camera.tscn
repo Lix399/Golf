@@ -2,5 +2,44 @@
 
 [ext_resource type="Script" uid="uid://cojlww4a4n8t2" path="res://scripts/Camera.gd" id="1_a3ute"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ute"]
+size = Vector2(1920, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8pla"]
+size = Vector2(100, 1080)
+
 [node name="Camera" type="Camera2D" unique_id=1949422700]
 script = ExtResource("1_a3ute")
+
+[node name="AreaUp" type="Area2D" parent="." unique_id=1988502634]
+
+[node name="CollisionPolygon" type="CollisionShape2D" parent="AreaUp" unique_id=1017254957]
+position = Vector2(0, -490)
+shape = SubResource("RectangleShape2D_a3ute")
+
+[node name="AreaDown" type="Area2D" parent="." unique_id=242440126]
+
+[node name="CollisionPolygon" type="CollisionShape2D" parent="AreaDown" unique_id=1499303209]
+position = Vector2(0, 490)
+shape = SubResource("RectangleShape2D_a3ute")
+
+[node name="AreaRight" type="Area2D" parent="." unique_id=1214134428]
+
+[node name="CollisionPolygon" type="CollisionShape2D" parent="AreaRight" unique_id=1793045362]
+position = Vector2(910, 0)
+shape = SubResource("RectangleShape2D_u8pla")
+
+[node name="AreaLeft" type="Area2D" parent="." unique_id=2117152437]
+
+[node name="CollisionPolygon" type="CollisionShape2D" parent="AreaLeft" unique_id=1016427043]
+position = Vector2(-910, 0)
+shape = SubResource("RectangleShape2D_u8pla")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1808154228]
+z_index = -10
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.53333336, 0.8156863, 1, 1)

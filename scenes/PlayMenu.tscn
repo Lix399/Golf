@@ -76,9 +76,9 @@ label_settings = SubResource("LabelSettings_wk0aj")
 [node name="ShootCdProgressBar" type="ProgressBar" parent="." unique_id=1644920217]
 visible = false
 offset_left = 72.99999
-offset_top = 1041.9998
-offset_right = 211.0
-offset_bottom = 1065.9998
+offset_top = 1029.0
+offset_right = 253.40536
+offset_bottom = 1069.2498
 scale = Vector2(1.4800001, 0.79999894)
 theme_override_styles/background = SubResource("StyleBoxFlat_t8p3s")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1sbe4")
@@ -88,20 +88,21 @@ show_percentage = false
 
 [node name="ShootCdNumber" type="Label" parent="ShootCdProgressBar" unique_id=770614494]
 layout_mode = 0
-offset_left = 139.5675
-offset_top = -8.799988
-offset_right = 179.5675
-offset_bottom = 11.200012
+offset_left = 185.51347
+offset_top = -6.299988
+offset_right = 225.51347
+offset_bottom = 20.700012
 scale = Vector2(0.9570733, 1.9419281)
+theme_override_font_sizes/font_size = 22
 text = "1.5"
 horizontal_alignment = 1
 
 [node name="AimingForceProgressBar" type="ProgressBar" parent="." unique_id=124083145]
 visible = false
 offset_left = 16.0
-offset_top = 467.0
-offset_right = 25.459457
-offset_bottom = 723.25037
+offset_top = 399.0
+offset_right = 36.945942
+offset_bottom = 740.2505
 scale = Vector2(1.4800001, 0.79999894)
 theme_override_styles/background = SubResource("StyleBoxFlat_o3en3")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4t15o")

@@ -7,7 +7,7 @@
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_v6fml")
 hframes = 7
-frame = 4
+frame = 1
 script = ExtResource("2_v6fml")
 
 [node name="FrameDelta" type="Timer" parent="." unique_id=1350050128]
