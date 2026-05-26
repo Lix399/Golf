@@ -1,0 +1,560 @@
+[gd_scene format=3 uid="uid://cujmhveej85lb"]
+
+[ext_resource type="Script" uid="uid://fkico8p47sxj" path="res://scripts/mainMenu.gd" id="1_u4kki"]
+[ext_resource type="Texture2D" uid="uid://d2istjxf4holt" path="res://graphics/sprites/bg.png" id="2_hf3n6"]
+[ext_resource type="Texture2D" uid="uid://dbqtaap146f1u" path="res://graphics/sprites/level icons/Level0Icon.png" id="3_2wh52"]
+[ext_resource type="StyleBox" uid="uid://btk6veo64x17j" path="res://graphics/styles/button_normal.tres" id="3_ow34m"]
+[ext_resource type="StyleBox" uid="uid://dqthfuf6hrysv" path="res://graphics/styles/button_pressed.tres" id="4_826wr"]
+[ext_resource type="StyleBox" uid="uid://h5ejm6myb6lw" path="res://graphics/styles/button_hover.tres" id="5_ucygd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
+texture = ExtResource("2_hf3n6")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wh52"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l72w3"]
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_826wr"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wh52"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ow34m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l72w3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_826wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucygd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mipys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a8k8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7la6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nypq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bky6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4mxc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ow34m"]
+font_size = 65
+font_color = Color(1, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 3.75)
+
+[node name="MainMenu" type="Node2D" unique_id=1281076604]
+script = ExtResource("1_u4kki")
+
+[node name="MainMenuGUI" type="CanvasLayer" parent="." unique_id=574351143]
+
+[node name="Background" type="Panel" parent="MainMenuGUI" unique_id=466608718]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MainMenuGUI/Background" unique_id=658430685]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainMenuGUI/Background/StaticBody2D" unique_id=772744907]
+visible = false
+position = Vector2(83.00001, -464.00003)
+scale = Vector2(2.41, 2.41)
+polygon = PackedVector2Array(392.11618, 504.56433, 394.6058, 507.05396, 394.6058, 516.1826, 404.5643, 516.1826, 404.5643, 507.05396, 407.46887, 504.97928, 414.93774, 505.3942, 422.40662, 506.2241, 431.9502, 507.4689, 444.39832, 509.54358, 457.67633, 512.4481, 472.6141, 516.59753, 485.89212, 521.16187, 497.09543, 525.3112, 508.71365, 530.70544, 539.00415, 544.3983, 554.3569, 550.62244, 563.90045, 553.11206, 576.7635, 554.3569, 588.7967, 553.527, 604.1494, 550.62244, 615.3527, 547.3029, 626.556, 542.7386, 640.24896, 536.92944, 648.9627, 532.7801, 662.24066, 525.7262, 677.5934, 517.01245, 687.13696, 511.61826, 694.1909, 507.4689, 704.97925, 501.65976, 708.71375, 499.58508, 713.693, 497.09546, 718.25726, 494.60583, 723.2365, 492.53113, 729.87555, 489.62656, 736.0996, 487.13693, 742.32367, 485.4772, 751.45233, 483.4025, 753.94196, 482.98755, 761.4108, 482.98755, 767.22, 483.81744, 821.9917, 457.2614, 765.14526, 679.2531, -38.17428, 690.4564, -101.24481, 576.7635, -110.78839, 451.03735, -38.17428, 481.74274, -26.141083, 497.51038, -7.4688835, 517.01245, 8.713688, 530.29047, 32.78008, 544.8133, 46.473026, 551.8672, 61.410786, 557.2614, 78.0083, 562.65564, 95.85062, 566.39, 110.37344, 568.0498, 126.97096, 568.87964, 143.15353, 568.87964, 149.79253, 568.4647, 160.99585, 567.6349, 178.83818, 565.14526, 199.17012, 560.58093, 221.99171, 553.527, 239.41908, 547.3029, 263.07053, 536.92944, 285.47717, 526.97095, 313.27798, 517.01245, 343.56845, 509.95853, 374.68878, 504.97928)
+
+[node name="MainButtons" type="Control" parent="MainMenuGUI" unique_id=1438571890]
+visibility_layer = 512
+z_index = 10
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -148.5
+offset_right = 87.0
+offset_bottom = 211.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="MainMenuGUI/MainButtons" unique_id=440221724]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 0
+offset_top = 97.0
+offset_right = 200.0
+offset_bottom = 128.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "GIOCA"
+
+[node name="Exit" type="Button" parent="MainMenuGUI/MainButtons" unique_id=978490029]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 0
+offset_top = 142.0
+offset_right = 200.0
+offset_bottom = 173.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "ESCI"
+
+[node name="UsernameLabel" type="Label" parent="MainMenuGUI/MainButtons" unique_id=1438101483]
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = -143.0
+offset_top = 394.5
+offset_right = 346.0
+offset_bottom = 514.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Inserisci il tuo nome utente per poter caricare i tuoi tempi online!"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="UsernameBtn" type="Button" parent="MainMenuGUI/MainButtons" unique_id=1048336991]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 0
+offset_top = 523.5
+offset_right = 200.0
+offset_bottom = 554.5
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "inserisci"
+
+[node name="LineEdit" type="LineEdit" parent="MainMenuGUI/MainButtons/UsernameBtn" unique_id=254547967]
+visible = false
+layout_mode = 0
+offset_left = -71.0
+offset_top = -214.0
+offset_right = 278.0
+offset_bottom = -169.0
+
+[node name="MultiplayerButtons" type="VBoxContainer" parent="MainMenuGUI" unique_id=1787872250]
+visible = false
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -913.0
+offset_top = 368.0
+offset_right = -713.0
+offset_bottom = 490.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Create" type="Button" parent="MainMenuGUI/MultiplayerButtons" unique_id=647414150]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "crea una
+ stanza"
+
+[node name="Enter" type="Button" parent="MainMenuGUI/MultiplayerButtons" unique_id=1148846303]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "entra in 
+una stanza"
+
+[node name="LevelSelect" type="Control" parent="MainMenuGUI" unique_id=1718443201]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 748.99994
+offset_top = 238.0
+offset_right = 788.99994
+offset_bottom = 278.0
+
+[node name="LevelSelectLabel" type="Label" parent="MainMenuGUI/LevelSelect" unique_id=1447395597]
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = 13.083328
+offset_top = -163.3334
+offset_right = 386.0833
+offset_bottom = -125.333405
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "SELEZIONA UN LIVELLO"
+label_settings = SubResource("LabelSettings_2wh52")
+
+[node name="Row1" type="HBoxContainer" parent="MainMenuGUI/LevelSelect" unique_id=1901919213]
+layout_mode = 0
+offset_left = -210.41676
+offset_top = 97.91672
+offset_right = 605.00006
+offset_bottom = 228.91672
+alignment = 1
+
+[node name="Level0" type="VBoxContainer" parent="MainMenuGUI/LevelSelect/Row1" unique_id=1412233579]
+layout_mode = 2
+alignment = 1
+
+[node name="LevelButton" type="Button" parent="MainMenuGUI/LevelSelect/Row1/Level0" unique_id=2022918970]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+icon = ExtResource("3_2wh52")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="LevelLabel" type="Label" parent="MainMenuGUI/LevelSelect/Row1/Level0" unique_id=321532261]
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_l72w3")
+horizontal_alignment = 1
+
+[node name="LevelSelectBack" type="Button" parent="MainMenuGUI/LevelSelect" unique_id=1981937003]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+custom_minimum_size = Vector2(200, 31)
+layout_mode = 0
+offset_left = 98.00006
+offset_top = 652.0
+offset_right = 298.00006
+offset_bottom = 683.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "indietro"
+
+[node name="LevelInfo" type="Control" parent="MainMenuGUI" unique_id=906265675]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_right = 51.0
+offset_bottom = 40.0
+
+[node name="LevelInfoLabel" type="Label" parent="MainMenuGUI/LevelInfo" unique_id=1588748753]
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = 838.0
+offset_top = 91.0
+offset_right = 1039.5
+offset_bottom = 129.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "LIVELLO X"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+
+[node name="LevelIcon" type="TextureRect" parent="MainMenuGUI/LevelInfo" unique_id=2099780126]
+layout_mode = 0
+offset_left = 1259.0
+offset_top = 301.0
+offset_right = 1460.0
+offset_bottom = 509.0
+
+[node name="LevelInfoButtons" type="VBoxContainer" parent="MainMenuGUI/LevelInfo" unique_id=819123461]
+visibility_layer = 512
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1278.0
+offset_top = 549.0
+offset_right = 1416.0
+offset_bottom = 625.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Play" type="Button" parent="MainMenuGUI/LevelInfo/LevelInfoButtons" unique_id=1967735002]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "GIOCA"
+
+[node name="Back" type="Button" parent="MainMenuGUI/LevelInfo/LevelInfoButtons" unique_id=1725502486]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_ow34m")
+theme_override_styles/pressed = ExtResource("4_826wr")
+theme_override_styles/hover = ExtResource("5_ucygd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
+text = "indietro"
+
+[node name="YourRecordsLabel" type="Label" parent="MainMenuGUI/LevelInfo" unique_id=487299747]
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = 834.0
+offset_top = 261.0
+offset_right = 1047.0
+offset_bottom = 299.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "tuo Record:"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+
+[node name="YourTime" type="Label" parent="MainMenuGUI/LevelInfo/YourRecordsLabel" unique_id=654771649]
+visible = false
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = -4.0
+offset_top = 48.0
+offset_right = 209.0
+offset_bottom = 80.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Time xxx"
+label_settings = SubResource("LabelSettings_826wr")
+horizontal_alignment = 1
+
+[node name="OnlineRecordsLabel" type="Label" parent="MainMenuGUI/LevelInfo" unique_id=301102757]
+visible = false
+visibility_layer = 512
+z_index = 10
+layout_mode = 0
+offset_left = 293.0
+offset_top = 267.0
+offset_right = 560.0
+offset_bottom = 305.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Record online:"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainMenuGUI/LevelInfo/OnlineRecordsLabel" unique_id=644573877]
+layout_mode = 0
+offset_left = -151.0
+offset_top = 46.0
+offset_right = 407.0
+offset_bottom = 541.0
+
+[node name="OnlineTimesContainer" type="VBoxContainer" parent="MainMenuGUI/LevelInfo/OnlineRecordsLabel/ScrollContainer" unique_id=1558475914]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 13
+
+[node name="OnlineRecord1" type="Label" parent="MainMenuGUI/LevelInfo/OnlineRecordsLabel/ScrollContainer/OnlineTimesContainer" unique_id=274053359]
+visibility_layer = 512
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_826wr")
+horizontal_alignment = 1
+
+[node name="SecretButton" type="Button" parent="MainMenuGUI" unique_id=1414279443]
+visibility_layer = 512
+z_index = 11
+offset_left = 853.0
+offset_top = 15.0
+offset_right = 1039.0
+offset_bottom = 73.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2wh52")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l72w3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_826wr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ucygd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_mipys")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8a8k8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7la6k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2nypq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bky6r")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l4mxc")
+flat = true
+
+[node name="Title" type="Label" parent="MainMenuGUI" unique_id=1426805036]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.0
+offset_right = 73.0
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "GOLF"
+label_settings = SubResource("LabelSettings_ow34m")
+
+[node name="OnlineConnection" type="Label" parent="MainMenuGUI" unique_id=2108156741]
+visible = false
+visibility_layer = 512
+z_index = 10
+offset_left = 758.0
+offset_top = 963.0
+offset_right = 1131.0
+offset_bottom = 1065.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "ONLINE XXX"
+label_settings = SubResource("LabelSettings_2wh52")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FadeOut" type="Timer" parent="MainMenuGUI/OnlineConnection" unique_id=516660455]
+wait_time = 0.2
+
+[node name="FadeOutStart" type="Timer" parent="MainMenuGUI/OnlineConnection" unique_id=1465988411]
+wait_time = 3.0
+
+[connection signal="pressed" from="MainMenuGUI/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenuGUI/MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MainMenuGUI/MainButtons/UsernameBtn" to="." method="_on_username_btn_pressed"]
+[connection signal="text_submitted" from="MainMenuGUI/MainButtons/UsernameBtn/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="MainMenuGUI/LevelSelect/Row1/Level0/LevelButton" to="." method="_on_level_pressed" binds= [0]]
+[connection signal="pressed" from="MainMenuGUI/LevelSelect/LevelSelectBack" to="." method="_on_level_select_back_pressed"]
+[connection signal="pressed" from="MainMenuGUI/LevelInfo/LevelInfoButtons/Play" to="." method="_on_play_level_pressed"]
+[connection signal="pressed" from="MainMenuGUI/LevelInfo/LevelInfoButtons/Back" to="." method="_on_level_info_back_pressed"]
+[connection signal="pressed" from="MainMenuGUI/SecretButton" to="." method="_on_secret_button_pressed"]
+[connection signal="timeout" from="MainMenuGUI/OnlineConnection/FadeOut" to="." method="_on_fade_out_timeout"]
+[connection signal="timeout" from="MainMenuGUI/OnlineConnection/FadeOutStart" to="." method="_on_fade_out_start_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bejhghwhwjy27"]
+
+[ext_resource type="Script" uid="uid://cbwvcyy2apsbm" path="res://scripts/ballBounds.gd" id="1_68v4d"]
+
+[node name="BallBoundsArea" type="Area2D" unique_id=681988312]
+script = ExtResource("1_68v4d")
+
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=520957345]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

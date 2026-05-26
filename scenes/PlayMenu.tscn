@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://br6321efc5qmx"]
+
+[ext_resource type="Script" uid="uid://blgl5vp3j7hgu" path="res://scripts/playMenu.gd" id="1_wk0aj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_djjb2"]
+font_size = 30
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 3.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wk0aj"]
+font_size = 100
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.8)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8p3s"]
+bg_color = Color(0.6, 0.6, 0.6, 0.36078432)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbe4"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3en3"]
+bg_color = Color(1, 1, 1, 0.28235295)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4t15o"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="PlayMenu" type="Node2D" unique_id=1071620559]
+script = ExtResource("1_wk0aj")
+
+[node name="StopwatchLabel" type="Label" parent="." unique_id=240585392]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1767.0
+offset_top = 1027.0
+offset_right = 1905.0
+offset_bottom = 1064.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Secondi"
+label_settings = SubResource("LabelSettings_djjb2")
+
+[node name="TimeLabel" type="Label" parent="StopwatchLabel" unique_id=1600208138]
+visibility_layer = 512
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -55.5
+offset_right = 73.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_djjb2")
+
+[node name="CountdownLabel" type="Label" parent="." unique_id=951965574]
+visible = false
+offset_left = 907.0
+offset_top = 490.0
+offset_right = 977.0
+offset_bottom = 611.0
+text = "0"
+label_settings = SubResource("LabelSettings_wk0aj")
+
+[node name="ShootCdProgressBar" type="ProgressBar" parent="." unique_id=1644920217]
+visible = false
+offset_left = 72.99999
+offset_top = 1041.9998
+offset_right = 211.0
+offset_bottom = 1065.9998
+scale = Vector2(1.4800001, 0.79999894)
+theme_override_styles/background = SubResource("StyleBoxFlat_t8p3s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1sbe4")
+max_value = 1.5
+fill_mode = 1
+show_percentage = false
+
+[node name="ShootCdNumber" type="Label" parent="ShootCdProgressBar" unique_id=770614494]
+layout_mode = 0
+offset_left = 139.5675
+offset_top = -8.799988
+offset_right = 179.5675
+offset_bottom = 11.200012
+scale = Vector2(0.9570733, 1.9419281)
+text = "1.5"
+horizontal_alignment = 1
+
+[node name="AimingForceProgressBar" type="ProgressBar" parent="." unique_id=124083145]
+visible = false
+offset_left = 16.0
+offset_top = 467.0
+offset_right = 25.459457
+offset_bottom = 723.25037
+scale = Vector2(1.4800001, 0.79999894)
+theme_override_styles/background = SubResource("StyleBoxFlat_o3en3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4t15o")
+max_value = 500.0
+fill_mode = 3
+show_percentage = false

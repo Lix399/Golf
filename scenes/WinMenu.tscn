@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://ye3rq6uurr4i"]
+
+[ext_resource type="Script" uid="uid://bv2omd5m2i385" path="res://scripts/winMenu.gd" id="1_y4ssr"]
+[ext_resource type="StyleBox" uid="uid://btk6veo64x17j" path="res://graphics/styles/button_normal.tres" id="2_44pu4"]
+[ext_resource type="StyleBox" uid="uid://h5ejm6myb6lw" path="res://graphics/styles/button_hover.tres" id="3_2we4w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_34tde"]
+font_size = 65
+font_color = Color(0, 0.88235295, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 3.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y4ssr"]
+font_size = 65
+font_color = Color(0.8666667, 0.88235295, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 3.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4dhvd"]
+font_size = 50
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 3.75)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtub8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_44pu4"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[node name="WinMenu" type="Node2D" unique_id=2063664509]
+process_mode = 3
+script = ExtResource("1_y4ssr")
+
+[node name="WinMenuPanel" type="Panel" parent="." unique_id=105988833]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="YouWonLabel" type="Label" parent="." unique_id=1002287064]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 765.0
+offset_top = 62.0
+offset_right = 1118.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "hai vinto"
+label_settings = SubResource("LabelSettings_34tde")
+
+[node name="NewRecord" type="Label" parent="." unique_id=1052544714]
+visible = false
+visibility_layer = 512
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 764.0
+offset_top = 206.0
+offset_right = 1320.0
+offset_bottom = 284.0
+grow_horizontal = 2
+scale = Vector2(0.64000034, 0.64000034)
+text = "nuovo record!"
+label_settings = SubResource("LabelSettings_y4ssr")
+
+[node name="WinTimeLabel" type="Label" parent="." unique_id=1306230377]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 827.5
+offset_top = 854.0
+offset_right = 1056.5
+offset_bottom = 979.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+Secondi"
+label_settings = SubResource("LabelSettings_4dhvd")
+
+[node name="WinMenuButtons" type="VBoxContainer" parent="." unique_id=33092513]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 837.5
+offset_top = 483.5
+offset_right = 1037.5
+offset_bottom = 629.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VBoxContainer" parent="WinMenuButtons" unique_id=208276251]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="TryAgain" type="Button" parent="WinMenuButtons/VSplitContainer" unique_id=2037937868]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_44pu4")
+theme_override_styles/pressed = ExtResource("2_44pu4")
+theme_override_styles/hover = ExtResource("3_2we4w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rtub8")
+text = "gioca 
+di nuovo"
+
+[node name="Exit" type="Button" parent="WinMenuButtons/VSplitContainer" unique_id=586473576]
+light_mask = 2
+visibility_layer = 512
+z_index = 10
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_44pu4")
+theme_override_styles/pressed = ExtResource("2_44pu4")
+theme_override_styles/hover = ExtResource("3_2we4w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rtub8")
+text = "Esci"
+
+[node name="WinMenuAppearTime" type="Timer" parent="." unique_id=1627082239]
+wait_time = 0.5
+one_shot = true
+
+[node name="TaskResult" type="Label" parent="." unique_id=1789169439]
+visible = false
+visibility_layer = 512
+z_index = 10
+offset_left = 701.0
+offset_top = 352.0
+offset_right = 1190.0
+offset_bottom = 472.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "text"
+label_settings = SubResource("LabelSettings_44pu4")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="WinMenuButtons/VSplitContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="WinMenuButtons/VSplitContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="WinMenuAppearTime" to="." method="_on_win_menu_appear_time_timeout"]

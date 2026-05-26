@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bnr244x842gws"]
+
+[ext_resource type="Script" uid="uid://wsppqnjbr3by" path="res://scripts/hole.gd" id="1_vabtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns3kb"]
+size = Vector2(18.5, 12)
+
+[node name="Hole" type="Node2D" unique_id=303415930]
+script = ExtResource("1_vabtr")
+
+[node name="HoleArea" type="Area2D" parent="." unique_id=802300273]
+metadata/_edit_group_ = true
+
+[node name="HoleCollision" type="CollisionShape2D" parent="HoleArea" unique_id=1179811570]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ns3kb")
+metadata/_edit_group_ = true
+
+[connection signal="body_entered" from="HoleArea" to="." method="_on_hole_area_body_entered"]

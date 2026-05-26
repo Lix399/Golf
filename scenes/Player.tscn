@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dile4novdhrtd"]
+
+[ext_resource type="Texture2D" uid="uid://7ohs21bkyyp5" path="res://graphics/sprites/player/player_sprite_sheet.png" id="1_v6fml"]
+[ext_resource type="Script" uid="uid://k0sj2ytxse3s" path="res://scripts/player.gd" id="2_v6fml"]
+
+[node name="Player" type="Sprite2D" unique_id=991583396]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_v6fml")
+hframes = 7
+frame = 4
+script = ExtResource("2_v6fml")
+
+[node name="FrameDelta" type="Timer" parent="." unique_id=1350050128]
+wait_time = 0.2
+
+[connection signal="timeout" from="FrameDelta" to="." method="_on_frame_delta_timeout"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c0d8njtingqsd"]
+
+[ext_resource type="Script" uid="uid://d20hvi315h11l" path="res://scripts/levelGUI.gd" id="1_b3fsl"]
+[ext_resource type="PackedScene" uid="uid://caws76plt7ktl" path="res://scenes/PauseMenu.tscn" id="1_tsgml"]
+[ext_resource type="PackedScene" uid="uid://br6321efc5qmx" path="res://scenes/PlayMenu.tscn" id="2_e4pa4"]
+[ext_resource type="PackedScene" uid="uid://ye3rq6uurr4i" path="res://scenes/WinMenu.tscn" id="2_mvbth"]
+
+[node name="LevelsGUI" type="CanvasLayer" unique_id=594278634]
+script = ExtResource("1_b3fsl")
+
+[node name="PlayMenu" parent="." unique_id=1071620559 instance=ExtResource("2_e4pa4")]
+
+[node name="PauseMenu" parent="." unique_id=924406656 instance=ExtResource("1_tsgml")]
+visible = false
+
+[node name="WinMenu" parent="." unique_id=1521419597 instance=ExtResource("2_mvbth")]
+visible = false
