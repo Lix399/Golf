@@ -10,8 +10,8 @@ var lastPosition : Vector2 = Vector2.ZERO
 var speed
 var checkSpeed = false
 var pendingRespawn = false
-var pending_stop = false
-var pending_drawning = false
+var in_sand = false
+var pending_drowning = false
 
 func _ready() -> void:
 	Signals.shot.connect(on_shot)
@@ -21,6 +21,8 @@ func _ready() -> void:
 	lastPosition = global_position
 	Signals.resetState.connect(on_resetState)
 	Signals.has_touched_sand.connect(on_has_touched_sand)
+	Signals.has_exited_sand.connect(on_has_exited_sand)
+	Signals.has_touched_water.connect(on_has_touched_water)
 	
 	Signals.ball_ready.emit(self)
 
@@ -43,8 +45,15 @@ func _process(_delta: float) -> void:
 	if dragging:
 		Signals.current_aiming_force.emit(shootingForce())
 
+func on_has_touched_water():
+	checkSpeed = false
+	pending_drowning = true
+
 func on_has_touched_sand():
-	pending_stop = true
+	in_sand = true
+
+func on_has_exited_sand():
+	in_sand = false
 
 func checkBallSpeedForCooldown() -> void:
 	speed = linear_velocity.length()
@@ -72,7 +81,6 @@ func on_paused() -> void:
 	respawnTime.paused = true
 	
 func on_outOfBounds() -> void:
-	print("OUT OF BOUNDS!!!!!")
 	checkSpeed = false
 	respawnTime.start()
 	call_deferred("respawnBall")
@@ -135,8 +143,17 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		cooldown.start()
 		Signals.cooldownStart.emit(lastPosition)
 		
-	if pending_stop:
+	if in_sand:
+		state.linear_velocity *= 0.9
+		
+	if pending_drowning:
+		if $DrowningTime.is_stopped():
+			$DrowningTime.start()
 		state.linear_velocity = Vector2.ZERO
 		state.angular_velocity = 0
-		pending_stop = false
-		Signals.cooldownStart.emit(lastPosition)
+		state.transform.origin.y += 0.1	
+
+
+func _on_drowning_time_timeout() -> void:
+	pending_drowning = false
+	pendingRespawn = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckl3dpubqre3w" path="res://scripts/water.gd" id="1_h7np4"]
 
-[node name="SandArea" type="Area2D" unique_id=249445443]
+[node name="WaterArea" type="Area2D" unique_id=249445443]
 script = ExtResource("1_h7np4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=259044773]

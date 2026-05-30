@@ -63,4 +63,8 @@ signal flag_ready
 @warning_ignore("unused_signal")
 signal ball_ready
 @warning_ignore("unused_signal")
+signal has_exited_sand
+@warning_ignore("unused_signal")
 signal has_touched_sand
+@warning_ignore("unused_signal")
+signal has_touched_water
