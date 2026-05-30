@@ -1,16 +1,23 @@
 extends Camera2D
 @onready var areas = [$AreaUp, $AreaDown, $AreaRight, $AreaLeft]
-
+@onready var ball = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Signals.up_pressed.connect(on_up_pressed)
 	Signals.down_pressed.connect(on_down_pressed)
 	Signals.right_pressed.connect(on_right_pressed)
 	Signals.left_pressed.connect(on_left_pressed)
+	Signals.ball_ready.connect(on_ball_ready)
 	Signals.isDragging.connect(on_isDragging)
 
-func on_isDragging(_dragStart, _ballPosition):
+func on_ball_ready(ballArg: Node2D):
+	self.ball = ballArg
+
+func on_loadingLevel():
 	global_position = GameManager.ballGbPosition
+
+func on_isDragging(_dragStart, ballPosition):
+	global_position = ballPosition
 
 func on_up_pressed():
 	global_position.y += -6
@@ -23,10 +30,6 @@ func on_right_pressed():
 
 func on_left_pressed():
 	global_position.x += -6
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:

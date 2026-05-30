@@ -12,7 +12,6 @@ script = ExtResource("1_vabtr")
 metadata/_edit_group_ = true
 
 [node name="HoleCollision" type="CollisionShape2D" parent="HoleArea" unique_id=1179811570]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ns3kb")
 metadata/_edit_group_ = true
 

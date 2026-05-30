@@ -18,6 +18,8 @@ func _ready() -> void:
 	Signals.resumed.connect(on_resumed)
 	lastPosition = global_position
 	Signals.resetState.connect(on_resetState)
+	
+	Signals.ball_ready.emit(self)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -37,7 +39,8 @@ func _process(_delta: float) -> void:
 		
 	if dragging:
 		Signals.current_aiming_force.emit(shootingForce())
-	
+
+
 func checkBallSpeedForCooldown() -> void:
 	speed = linear_velocity.length()
 	

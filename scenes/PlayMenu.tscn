@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://yn6rxu5yet5h" path="res://scenes/Crosshair.tscn" id="2_1sbe4"]
 [ext_resource type="Script" uid="uid://c3m4bicdgmwjo" path="res://scripts/crosshair.gd" id="3_o3en3"]
 [ext_resource type="Script" uid="uid://f6yfsvyof6ud" path="res://scripts/aiming_line.gd" id="4_dd3vs"]
-[ext_resource type="Texture2D" uid="uid://b4ixe8wlkc1va" path="res://graphics/sprites/flag_icon.png" id="5_dd3vs"]
-[ext_resource type="PackedScene" uid="uid://cp5yfml66v5c6" path="res://scenes/Triangle.tscn" id="5_o3en3"]
+[ext_resource type="PackedScene" uid="uid://b4xlamfe4iglm" path="res://scenes/FlagIndicator.tscn" id="5_o3en3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_djjb2"]
 font_size = 30
@@ -128,10 +127,5 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("4_dd3vs")
 
-[node name="FlagIcon" type="Sprite2D" parent="." unique_id=1643004940]
-position = Vector2(188, 337)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_dd3vs")
-
-[node name="Node2D" parent="." unique_id=2133604863 instance=ExtResource("5_o3en3")]
-position = Vector2(187, 297)
+[node name="FlagIndicator" parent="." unique_id=567586087 instance=ExtResource("5_o3en3")]
+visible = false

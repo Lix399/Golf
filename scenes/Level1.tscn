@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="2_n34uq"]
 [ext_resource type="PackedScene" uid="uid://dile4novdhrtd" path="res://scenes/Player.tscn" id="3_kbo48"]
 [ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="4_4dyl1"]
+[ext_resource type="PackedScene" uid="uid://c74y067qt0xr0" path="res://scenes/flag_area.tscn" id="5_76388"]
 [ext_resource type="PackedScene" uid="uid://bejhghwhwjy27" path="res://scenes/BallBounds.tscn" id="8_ipmer"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_64wtg"]
@@ -29,15 +30,15 @@ polygon = PackedVector2Array(-40, -548, -36, -551, -30, -553, 114, -553, 119, -5
 
 [node name="Island4" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=521194485]
 position = Vector2(-561, 780)
-polygon = PackedVector2Array(26, -349, 154, -483, 263, -427, 416, -514, 486, -429, 553, -515, 658, -451, 658, -294, 650, -290, 570, -367, 487, -310, 355, -364, 156, -257, 33, -228, 26, -231)
+polygon = PackedVector2Array(23, -351, 152, -486, 156, -487, 160, -485, 264, -429, 266, -430, 409, -515, 413, -516, 418, -514, 485, -432, 489, -432, 490, -433, 549, -514, 553, -516, 557, -515, 657, -453, 659, -450, 659, -295, 658, -293, 656, -291, 653, -290, 648, -290, 569, -364, 487, -310, 355, -365, 155, -254, 33, -228, 29, -228, 26, -229, 23, -232)
 
 [node name="Island5" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=183582788]
 position = Vector2(-561, 780)
-polygon = PackedVector2Array(703, -455, 797, -585, 934, -458, 985, -552, 1053, -468, 1153, -572, 1256, -415, 1230, -326, 1081, -278, 834, -362, 742, -287, 707, -288)
+polygon = PackedVector2Array(793, -585, 795, -586, 798, -587, 801, -586, 803, -585, 934, -458, 936, -458, 937, -459, 980, -549, 982, -552, 986, -554, 989, -554, 992, -552, 1049, -474, 1052, -471, 1055, -471, 1148, -571, 1151, -573, 1154, -574, 1156, -573, 1159, -571, 1256, -415, 1230, -326, 1081, -278, 974, -311, 858, -352, 834, -362, 740, -288, 707, -288, 704, -291, 703, -294, 703, -453)
 
 [node name="Island6" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=928837595]
 position = Vector2(-561, 780)
-polygon = PackedVector2Array(178, -86, 661, -87, 670, -49, 694, -50, 699, -86, 1117, -87, 1186, -21, 1378, -87, 1432, -86, 1544, 67, 1406, 194, 1250, 155, 917, 193, 45, 194, -56, 28, -56, 21, 33, -87, 99, -46)
+polygon = PackedVector2Array(178, -86, 665, -87, 670, -80, 670, -58, 693, -58, 693, -80, 698, -87, 1117, -87, 1186, -21, 1378, -87, 1432, -86, 1544, 67, 1406, 194, 1250, 155, 917, 193, 45, 194, -56, 28, -56, 21, 33, -87, 99, -46)
 
 [node name="LevelObjects" type="Node" parent="." unique_id=1103760741]
 
@@ -50,11 +51,14 @@ position = Vector2(234.00002, -561.99994)
 [node name="Ball" parent="LevelObjects" unique_id=1546105679 instance=ExtResource("4_4dyl1")]
 position = Vector2(233.99998, -511.99994)
 
+[node name="FlagArea" parent="LevelObjects" unique_id=482707268 instance=ExtResource("5_76388")]
+position = Vector2(121, 618)
+
 [node name="BallBounds" parent="." unique_id=847579443 instance=ExtResource("8_ipmer")]
 position = Vector2(399, 517)
 
 [node name="Collision" parent="BallBounds" index="0" unique_id=520957345]
-position = Vector2(-361, 182)
+position = Vector2(-360, 180)
 build_mode = 1
 polygon = PackedVector2Array(-1963, 572, -1939, -2284, 1590, -2308, 1596, 548)
 

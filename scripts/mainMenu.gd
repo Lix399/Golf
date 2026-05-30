@@ -30,6 +30,9 @@ func _ready() -> void:
 	if !GameManager.username.is_empty():
 		username_label.visible = false
 		username_btn.visible = false
+	else:
+		username_label.visible = true
+		username_btn.visible = true
 	
 	if Cloud.conn_established == 0:
 		$MainMenuGUI/LevelInfo/OnlineRecordsLabel.visible = true

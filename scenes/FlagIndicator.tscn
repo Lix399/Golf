@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b4xlamfe4iglm"]
+
+[ext_resource type="Texture2D" uid="uid://b4ixe8wlkc1va" path="res://graphics/sprites/flag_icon.png" id="1_3q212"]
+[ext_resource type="Script" uid="uid://br06bkf68f2yq" path="res://scripts/flag_indicator.gd" id="1_hdmmm"]
+[ext_resource type="PackedScene" uid="uid://cp5yfml66v5c6" path="res://scenes/Triangle.tscn" id="2_hdmmm"]
+
+[node name="FlagIndicator" type="Node2D" unique_id=567586087]
+script = ExtResource("1_hdmmm")
+
+[node name="FlagIcon" type="Sprite2D" parent="." unique_id=1161064984]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3q212")
+
+[node name="Pointer" parent="." unique_id=2133604863 instance=ExtResource("2_hdmmm")]

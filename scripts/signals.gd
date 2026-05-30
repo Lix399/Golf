@@ -58,3 +58,7 @@ signal online_times_ready
 signal shotDirection
 @warning_ignore("unused_signal")
 signal current_aiming_force
+@warning_ignore("unused_signal")
+signal flag_ready
+@warning_ignore("unused_signal")
+signal ball_ready

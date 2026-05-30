@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="4_faw0r"]
 [ext_resource type="PackedScene" uid="uid://bejhghwhwjy27" path="res://scenes/BallBounds.tscn" id="5_2eouu"]
+[ext_resource type="PackedScene" uid="uid://c74y067qt0xr0" path="res://scenes/flag_area.tscn" id="5_npxhf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_64wtg"]
 
@@ -47,6 +48,9 @@ position = Vector2(234.00002, -401.99997)
 [node name="Ball" parent="LevelObjects" unique_id=1546105679 instance=ExtResource("3_4qegb")]
 position = Vector2(234, -352)
 
+[node name="FlagArea" parent="LevelObjects" unique_id=482707268 instance=ExtResource("5_npxhf")]
+position = Vector2(-7, 319)
+
 [node name="BallBounds" parent="." unique_id=847579443 instance=ExtResource("5_2eouu")]
 position = Vector2(399, 517)
 
@@ -54,7 +58,5 @@ position = Vector2(399, 517)
 position = Vector2(-361, 182)
 build_mode = 1
 polygon = PackedVector2Array(-1567, 82, -1561, -1987, 1578, -1996, 1581, 46)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=855864626]
 
 [editable path="BallBounds"]

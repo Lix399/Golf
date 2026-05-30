@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c74y067qt0xr0"]
+
+[ext_resource type="Script" uid="uid://cxhbvicuug2ty" path="res://scripts/flag_area.gd" id="1_7ktqh"]
+
+[node name="FlagArea" type="Area2D" unique_id=482707268]
+script = ExtResource("1_7ktqh")
+
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=486047464]
+rect = Rect2(-17, -24, 34, 49)
