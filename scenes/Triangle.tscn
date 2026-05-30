@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cp5yfml66v5c6"]
+
+[node name="Node2D" type="Polygon2D" unique_id=2133604863]
+color = Color(1, 0, 0, 1)
+antialiased = true
+polygon = PackedVector2Array(0, -15, 10, 10, -10, 10)

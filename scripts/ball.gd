@@ -45,7 +45,7 @@ func checkBallSpeedForCooldown() -> void:
 		checkSpeed = false
 		lastPosition = global_position
 		cooldown.start()
-		if !GameManager.isInHole: 
+		if !GameManager.isInHole:
 			Signals.cooldownStart.emit(lastPosition)
 
 func on_resumed() -> void:
@@ -74,7 +74,7 @@ func on_shot() -> void:
 
 func mousePressed() -> void:
 	dragging = true
-	dragStart = get_global_mouse_position()
+	dragStart =  get_viewport().get_mouse_position()
 	Signals.isDragging.emit(dragStart, global_position)
 
 func mouseReleased() -> void:
@@ -89,7 +89,7 @@ func mouseReleased() -> void:
 		Signals.released.emit()
 
 func shootingForce() -> Vector2:
-	var currentMousePosition = get_global_mouse_position()
+	var currentMousePosition = get_viewport().get_mouse_position()
 	
 	if currentMousePosition.x < dragStart.x:
 		shootingRight = true
@@ -100,6 +100,7 @@ func shootingForce() -> Vector2:
 	var force : Vector2
 	if direction.length() > 10:
 		force = direction.limit_length(GameManager.maxForceVector)
+		force.angle()
 	return force
 
 func _on_cooldown_timeout() -> void:
@@ -108,7 +109,7 @@ func _on_cooldown_timeout() -> void:
 
 func respawnBall() -> void:
 	pendingRespawn = true
-	freeze = true 
+	freeze = true
 	visible = false
 
 func _on_respawn_time_timeout() -> void:

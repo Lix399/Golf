@@ -15,8 +15,8 @@ func on_loadingLevel(_levelPath : String) -> void:
 	levelNumberLb.text = "LIVELLO " + str(GameManager.levelNumber + 1)
 
 func on_esc() -> void:
-	if GameManager.insideLevel:
-		if GameManager.isPlaying:
+	if GameManager.insideLevel and GameManager.isPlaying:
+		if  !GameManager.isPaused:
 			$LevelNumber.text = "livello " + str(GameManager.levelNumber + 1)
 			visible = true
 			get_tree().paused = true

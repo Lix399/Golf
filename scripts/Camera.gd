@@ -7,6 +7,10 @@ func _ready() -> void:
 	Signals.down_pressed.connect(on_down_pressed)
 	Signals.right_pressed.connect(on_right_pressed)
 	Signals.left_pressed.connect(on_left_pressed)
+	Signals.isDragging.connect(on_isDragging)
+
+func on_isDragging(_dragStart, _ballPosition):
+	global_position = GameManager.ballGbPosition
 
 func on_up_pressed():
 	global_position.y += -6

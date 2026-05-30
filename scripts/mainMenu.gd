@@ -54,13 +54,15 @@ func on_online_times_ready():
 				online_times_container.add_child(copy)
 	else:
 		online_record_model.text = "Non ci sono record online!"
+	online_times_container.visible = true
 
 func on_conn_established():
-	print("Main menu conn established")
 	setup_cloud_label()
 	$MainMenuGUI/OnlineConnection/FadeOutStart.start()
 	if Cloud.conn_established == 0:
 		$MainMenuGUI/LevelInfo/OnlineRecordsLabel.visible = true
+		username_label.visible = true
+		username_btn.visible = true
 
 func _on_fade_out_start_timeout() -> void:
 	$MainMenuGUI/OnlineConnection/FadeOut.start()
@@ -107,6 +109,7 @@ func spawnNewBall() -> void:
 
 func _on_level_pressed(levelPressed) -> void:
 	Signals.levelInfoPressed.emit(levelPressed)
+	online_times_container.visible = false
 	selectedLevel = levelPressed
 	level_select.visible = false
 	levelInfoLabel.text = "livello " +  str(selectedLevel + 1)

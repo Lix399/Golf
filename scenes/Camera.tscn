@@ -9,6 +9,7 @@ size = Vector2(1920, 100)
 size = Vector2(100, 1080)
 
 [node name="Camera" type="Camera2D" unique_id=1949422700]
+position_smoothing_enabled = true
 script = ExtResource("1_a3ute")
 
 [node name="AreaUp" type="Area2D" parent="." unique_id=1988502634]
@@ -38,8 +39,8 @@ shape = SubResource("RectangleShape2D_u8pla")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1808154228]
 z_index = -10
 custom_minimum_size = Vector2(1920, 1080)
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -1702.0
+offset_top = -1065.0
+offset_right = 1708.0
+offset_bottom = 1072.0
 color = Color(0.53333336, 0.8156863, 1, 1)

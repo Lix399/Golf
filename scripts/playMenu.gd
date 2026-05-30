@@ -22,12 +22,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if GameManager.isPlaying:
+	if !GameManager.isPaused and GameManager.isPlaying:
 		processStopwatch(delta)
 	if GameManager.isOnCooldown and !GameManager.isInHole:
 		processCooldown()
 	if GameManager.isAiming:
 		processAiming()
+	
+	processIndicators()
+
+func processIndicators():
+	pass
 
 func processAiming() -> void:
 	var forceLength = GameManager.aimingForce.length()

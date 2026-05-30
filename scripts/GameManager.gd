@@ -109,13 +109,12 @@ func on_hasWon() -> void:
 	if Cloud.conn_established == 0 and !username.is_empty():
 		Cloud.save_time()
 
-func on_isDragging(dragStartArg, _ballPosition) -> void:
+func on_isDragging(dragStartArg, ballPosition) -> void:
 	dragStart = dragStartArg
+	ballGbPosition = ballPosition
 	isAiming = true
-	print("Is aiming")
 
 func on_resumed() -> void:
-	isPlaying = true
 	isPaused = false
 
 func on_resetState() -> void:
@@ -171,8 +170,8 @@ func on_countdownOver() -> void:
 	canShoot = true
 	
 func on_paused() -> void:
-	isPlaying = false
 	isPaused = true
+	print("is paused messo a true")
 	
 func on_released() -> void:
 	isAiming = false

@@ -9,6 +9,9 @@ func _ready() -> void:
 func on_shotOrReleased() -> void:
 	visible = false
 	
-func on_isDragging(dragStart, _ballPosition) -> void:
+func on_isDragging(_dragStart, _ballPosition) -> void:
 	visible = true
-	global_position = dragStart
+	
+	await get_tree().process_frame
+	
+	position = get_viewport().get_mouse_position()

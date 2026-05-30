@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://btk6veo64x17j" path="res://graphics/styles/button_normal.tres" id="3_ow34m"]
 [ext_resource type="StyleBox" uid="uid://dqthfuf6hrysv" path="res://graphics/styles/button_pressed.tres" id="4_826wr"]
 [ext_resource type="StyleBox" uid="uid://h5ejm6myb6lw" path="res://graphics/styles/button_hover.tres" id="5_ucygd"]
+[ext_resource type="Texture2D" uid="uid://debwrq305d52t" path="res://graphics/sprites/level icons/Level1Icon.png" id="7_ucygd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("2_hf3n6")
@@ -140,6 +141,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
 text = "ESCI"
 
 [node name="UsernameLabel" type="Label" parent="MainMenuGUI/MainButtons" unique_id=1438101483]
+visible = false
 visibility_layer = 512
 z_index = 10
 layout_mode = 0
@@ -155,6 +157,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="UsernameBtn" type="Button" parent="MainMenuGUI/MainButtons" unique_id=1048336991]
+visible = false
 light_mask = 2
 visibility_layer = 512
 z_index = 10
@@ -339,7 +342,7 @@ theme_override_styles/normal = ExtResource("3_ow34m")
 theme_override_styles/pressed = ExtResource("4_826wr")
 theme_override_styles/hover = ExtResource("5_ucygd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wu84c")
-icon = ExtResource("3_2wh52")
+icon = ExtResource("7_ucygd")
 flat = true
 autowrap_trim_flags = 0
 icon_alignment = 1

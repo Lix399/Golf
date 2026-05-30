@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="4_faw0r"]
 [ext_resource type="PackedScene" uid="uid://bejhghwhwjy27" path="res://scenes/BallBounds.tscn" id="5_2eouu"]
-[ext_resource type="PackedScene" uid="uid://yn6rxu5yet5h" path="res://scenes/Crosshair.tscn" id="5_tw76y"]
-[ext_resource type="Script" uid="uid://c3m4bicdgmwjo" path="res://scripts/crosshair.gd" id="6_5a2uh"]
-[ext_resource type="Script" uid="uid://f6yfsvyof6ud" path="res://scripts/aiming_line.gd" id="7_5a2uh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_64wtg"]
 
@@ -50,24 +47,14 @@ position = Vector2(234.00002, -401.99997)
 [node name="Ball" parent="LevelObjects" unique_id=1546105679 instance=ExtResource("3_4qegb")]
 position = Vector2(234, -352)
 
-[node name="Crosshair" parent="LevelObjects" unique_id=2046676485 instance=ExtResource("5_tw76y")]
-visible = false
-script = ExtResource("6_5a2uh")
-
-[node name="AimingLine2D" type="Line2D" parent="LevelObjects" unique_id=1758827418]
-visible = false
-width = 4.0
-default_color = Color(1, 1, 1, 0.8235294)
-begin_cap_mode = 2
-end_cap_mode = 2
-script = ExtResource("7_5a2uh")
-
 [node name="BallBounds" parent="." unique_id=847579443 instance=ExtResource("5_2eouu")]
 position = Vector2(399, 517)
 
 [node name="Collision" parent="BallBounds" index="0" unique_id=520957345]
 position = Vector2(-361, 182)
 build_mode = 1
-polygon = PackedVector2Array(-1567, 82, -1544, -2004, 1586, -1972, 1581, 46)
+polygon = PackedVector2Array(-1567, 82, -1561, -1987, 1578, -1996, 1581, 46)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=855864626]
 
 [editable path="BallBounds"]
