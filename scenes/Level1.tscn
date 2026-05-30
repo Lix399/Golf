@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cocf65vfn64bd" path="res://graphics/sprites/Level1.png" id="1_ecr63"]
 [ext_resource type="PackedScene" uid="uid://bnr244x842gws" path="res://scenes/Hole.tscn" id="2_n34uq"]
+[ext_resource type="PackedScene" uid="uid://04sekai46hbt" path="res://scenes/Sand.tscn" id="2_svatc"]
 [ext_resource type="PackedScene" uid="uid://dile4novdhrtd" path="res://scenes/Player.tscn" id="3_kbo48"]
 [ext_resource type="PackedScene" uid="uid://5wakf7t2ou5c" path="res://scenes/Ball.tscn" id="4_4dyl1"]
 [ext_resource type="PackedScene" uid="uid://c74y067qt0xr0" path="res://scenes/flag_area.tscn" id="5_76388"]
@@ -26,7 +27,13 @@ polygon = PackedVector2Array(68, -481, 384, -481, 387, -480, 389, -478, 390, -47
 
 [node name="Island3" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=1359887878]
 position = Vector2(-941, 571)
-polygon = PackedVector2Array(-40, -548, -36, -551, -30, -553, 114, -553, 119, -551, 123, -548, 162, -480, 166, -477, 237, -477, 276, -543, 278, -546, 279, -548, 283, -551, 287, -553, 498, -553, 503, -551, 506, -549, 509, -546, 549, -398, 549, -395, 548, -389, 545, -385, 542, -382, 317, -321, 119, -322, -40, -366, -43, -544)
+polygon = PackedVector2Array(-40, -548, -36, -551, -30, -553, 114, -553, 119, -551, 123, -548, 129, -538, 272, -538, 275, -544, 278, -549, 282, -552, 287, -553, 498, -553, 503, -551, 506, -549, 509, -546, 549, -398, 549, -395, 548, -389, 545, -385, 542, -382, 317, -321, 119, -322, -40, -366, -43, -544)
+
+[node name="Node2D" parent="LevelStaticBody2D/Island3" unique_id=249445443 instance=ExtResource("2_svatc")]
+position = Vector2(208, -522)
+
+[node name="CollisionPolygon2D" parent="LevelStaticBody2D/Island3/Node2D" index="0" unique_id=259044773]
+polygon = PackedVector2Array(-80, -20, 65, -20, 30, 46, -44, 45)
 
 [node name="Island4" type="CollisionPolygon2D" parent="LevelStaticBody2D" unique_id=521194485]
 position = Vector2(-561, 780)
@@ -62,4 +69,5 @@ position = Vector2(-360, 180)
 build_mode = 1
 polygon = PackedVector2Array(-1963, 572, -1939, -2284, 1590, -2308, 1596, 548)
 
+[editable path="LevelStaticBody2D/Island3/Node2D"]
 [editable path="BallBounds"]

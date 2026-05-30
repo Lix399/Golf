@@ -62,3 +62,5 @@ signal current_aiming_force
 signal flag_ready
 @warning_ignore("unused_signal")
 signal ball_ready
+@warning_ignore("unused_signal")
+signal has_touched_sand

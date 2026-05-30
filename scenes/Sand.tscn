@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://04sekai46hbt"]
+
+[ext_resource type="Script" uid="uid://bsj62yoysqr22" path="res://scripts/sand.gd" id="1_mvhek"]
+
+[node name="SandArea" type="Area2D" unique_id=249445443]
+script = ExtResource("1_mvhek")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=259044773]
+polygon = PackedVector2Array(-22, -37, 24, -35, 19, 38, -22, 36)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

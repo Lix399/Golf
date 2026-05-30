@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c833rucgxup1f"]
+
+[ext_resource type="Script" uid="uid://ckl3dpubqre3w" path="res://scripts/water.gd" id="1_h7np4"]
+
+[node name="SandArea" type="Area2D" unique_id=249445443]
+script = ExtResource("1_h7np4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=259044773]
+polygon = PackedVector2Array(-22, -37, 24, -35, 19, 38, -22, 36)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
