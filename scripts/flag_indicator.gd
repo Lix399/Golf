@@ -1,14 +1,14 @@
-extends Node2D
+extends Control
 
-@onready var pointer: Polygon2D = $Pointer
+@onready var pointer: Polygon2D = $Center/Pointer
 @onready var flag : Area2D
 @onready var notifier : VisibleOnScreenNotifier2D
 @onready var screen_rect : Rect2 #the screen rect, used to know if a certain point is inside it
 @onready var margin = 70 #the margin in pixels between the screen's border and the indicator
+@onready var newPosition : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Signals.ball_ready.connect(on_ball_ready)
 	Signals.flag_ready.connect(on_flag_ready)
 
 func on_flag_ready(flagArg: Node2D):
@@ -43,13 +43,27 @@ func checkFlag():
 	var screen_size = get_viewport_rect().size
 	
 	#sets the x and y of the indicator on the flag clamp position
-	global_position.x = clamp(flag_pos.x, margin, screen_size.x - margin)
-	global_position.y = clamp(flag_pos.y, margin, screen_size.y - margin)
+	newPosition.x = clamp(flag_pos.x, margin, screen_size.x - margin) - (size.x / 2)
+	newPosition.y = clamp(flag_pos.y, margin, screen_size.y - margin) - (size.y / 2)
+	
+	
+	var my_rect = Rect2(newPosition, size)
+	var elements = get_tree().get_nodes_in_group("PlayMenuElement")
+	var can_move : bool = true
+	
+	for element in elements:
+		if element != self and element is Control and element.is_visible_in_tree():
+			if my_rect.intersects(element.get_global_rect()):
+				can_move = false
+				break
 
-	var flag_direction = flag_pos - global_position #the direction from the indicator to the flag
+	if can_move:
+		global_position = newPosition
+
+	var flag_direction = flag_pos - (global_position + size / 2) #the direction from the indicator to the flag
 	var angle = flag_direction.angle() #the angle of the direction (in radians)
 
-	var radius = 41 
+	var radius = 40
 	pointer.position = Vector2.RIGHT.rotated(angle) * radius
 	pointer.rotation = angle + PI/2
 

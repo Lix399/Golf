@@ -9,6 +9,10 @@ func _ready() -> void:
 	Signals.left_pressed.connect(on_left_pressed)
 	Signals.ball_ready.connect(on_ball_ready)
 	Signals.isDragging.connect(on_isDragging)
+	Signals.hasRespawned.connect(on_hasRespawned)
+
+func on_hasRespawned(ballPosition):
+	global_position = ballPosition
 
 func on_ball_ready(ballArg: Node2D):
 	self.ball = ballArg
@@ -33,6 +37,9 @@ func on_left_pressed():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
+	global_position.x = clamp(global_position.x, limit_left, limit_right)
+	global_position.y = clamp(global_position.y, limit_top, limit_bottom)
+	return
 	for i in 4:
 		var bodies = areas.get(i).get_overlapping_bodies()
 		

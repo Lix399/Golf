@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
 [global_group]
 
 Ball=""
+PlayMenuElement="For Ui elements that could be overlapped by the game moving objects"
 
 [gui]
 

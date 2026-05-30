@@ -33,8 +33,7 @@ bg_color = Color(1, 0, 0, 1)
 [node name="PlayMenu" type="Node2D" unique_id=1071620559]
 script = ExtResource("1_wk0aj")
 
-[node name="StopwatchLabel" type="Label" parent="." unique_id=240585392]
-visible = false
+[node name="StopwatchLabel" type="Label" parent="." unique_id=240585392 groups=["PlayMenuElement"]]
 visibility_layer = 512
 z_index = 10
 anchors_preset = 8
@@ -42,9 +41,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1767.0
+offset_left = 1755.0
 offset_top = 1027.0
-offset_right = 1905.0
+offset_right = 1893.0
 offset_bottom = 1064.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -60,16 +59,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -69.0
+offset_left = -73.0
 offset_top = -55.5
-offset_right = 73.0
+offset_right = 97.0
 offset_bottom = -18.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_djjb2")
 
-[node name="CountdownLabel" type="Label" parent="." unique_id=951965574]
+[node name="CountdownLabel" type="Label" parent="." unique_id=951965574 groups=["PlayMenuElement"]]
 visible = false
 offset_left = 907.0
 offset_top = 490.0
@@ -78,7 +77,7 @@ offset_bottom = 611.0
 text = "0"
 label_settings = SubResource("LabelSettings_wk0aj")
 
-[node name="ShootCdProgressBar" type="ProgressBar" parent="." unique_id=1644920217]
+[node name="ShootCdProgressBar" type="ProgressBar" parent="." unique_id=1644920217 groups=["PlayMenuElement"]]
 visible = false
 offset_left = 72.99999
 offset_top = 1029.0
@@ -102,7 +101,7 @@ theme_override_font_sizes/font_size = 22
 text = "1.5"
 horizontal_alignment = 1
 
-[node name="AimingForceProgressBar" type="ProgressBar" parent="." unique_id=124083145]
+[node name="AimingForceProgressBar" type="ProgressBar" parent="." unique_id=124083145 groups=["PlayMenuElement"]]
 visible = false
 offset_left = 16.0
 offset_top = 399.0
@@ -127,5 +126,5 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("4_dd3vs")
 
-[node name="FlagIndicator" parent="." unique_id=567586087 instance=ExtResource("5_o3en3")]
+[node name="FlagIndicator" parent="." unique_id=567586087 groups=["PlayMenuElement"] instance=ExtResource("5_o3en3")]
 visible = false
