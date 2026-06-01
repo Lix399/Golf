@@ -25,7 +25,11 @@ func on_ball_ready(ballArg: Node2D):
 	#global_position = GameManager.ballGbPosition
 
 func on_isDragging(_dragStart, ballPosition):
-	global_position = ballPosition
+	var screen_rect = get_viewport_rect()
+	var ballPosition_on_screen = ball.get_global_transform_with_canvas().origin
+	
+	if !screen_rect.has_point(ballPosition_on_screen):
+		global_position = ballPosition
 
 func on_up_pressed():
 	global_position.y += -6
