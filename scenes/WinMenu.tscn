@@ -109,6 +109,7 @@ label_settings = SubResource("LabelSettings_4dhvd")
 horizontal_alignment = 1
 
 [node name="TaskResult" type="Label" parent="." unique_id=1789169439]
+visible = false
 visibility_layer = 512
 z_index = 10
 offset_left = 701.0

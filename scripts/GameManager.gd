@@ -83,8 +83,9 @@ func on_current_aiming_force(aimingForceArg):
 	self.aimingForce = aimingForceArg
 
 func on_levelInfoPressed(levelPressed):
+	levelNumber = levelPressed
 	if Cloud.conn_established == 0:
-		Cloud.load_times(levelPressed)
+		Cloud.load_times(false)
 
 func on_username_set(username_set):
 	self.username = username_set
@@ -111,8 +112,9 @@ func registerNewTime():
 
 func on_hasWon() -> void:
 	call_deferred("registerNewTime")
+	print("DEBUG - Dati che sto per inviare In GM: wint time, shots e level number" + str(winTime) + ", "+ str(shots) + ", "+ str(levelNumber)) # <--- AGGIUNGI QUESTO
 	if Cloud.conn_established == 0 and !username.is_empty():
-		Cloud.save_time()
+		Cloud.load_times(true)
 
 func on_isDragging(dragStartArg, ballPosition) -> void:
 	dragStart = dragStartArg
@@ -186,3 +188,9 @@ func on_shot() -> void:
 	canShoot = false
 	isOnCooldown = true
 	isAiming = false
+
+func is_user_connected() -> bool:
+	if Cloud.conn_established == 0 and !username.is_empty():
+		return true
+	else:
+		return false

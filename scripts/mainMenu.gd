@@ -38,7 +38,7 @@ func _ready() -> void:
 		$MainMenuGUI/LevelInfo/OnlineRecordsLabel.visible = true
 
 func on_online_times_ready():
-	var times = GameManager.level_online_times
+	var times :Array = GameManager.level_online_times
 	
 	#elimina i tempi duplicati per evitare di aggiungere doppioni dopo
 	@warning_ignore("shadowed_variable_base_class")
@@ -50,10 +50,12 @@ func on_online_times_ready():
 	if times.size() > 0:
 		for i in range(times.size()):
 			if i == 0:
-				online_record_model.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
+				online_record_model.text = str(i + 1) + ". tiri: " \
+				+ str(times[i].shots) + ", "+str(times[i].time) + " | " + str(times[i].username)
 			else:
 				var copy = online_record_model.duplicate()
-				copy.text = str(i + 1) + ". " +str(times[i].time) + " | " + str(times[i].username)
+				copy.text = str(i + 1) + ". tiri: " \
+				+ str(times[i].shots) + ", "+str(times[i].time) + " | " + str(times[i].username)
 				online_times_container.add_child(copy)
 	else:
 		online_record_model.text = "Non ci sono record online!"

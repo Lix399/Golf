@@ -19,13 +19,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func on_task_succeeded():
-	print("Task succeded in winmenu")
-	task_result.visible = true
-	task_result.text = "tempo caricato online!"
+func on_task_succeeded(message):
+	task_result.text = message
 	
 func on_task_failed():
-	task_result.visible = true
 	task_result.text = "impossibile caricare il tempo online!"
 
 func on_resetState() -> void:
@@ -36,6 +33,10 @@ func on_newRecord() -> void:
 	newRecord.visible = true
 	
 func on_hasWon() -> void:
+	print("Is connected?: "+ str(GameManager.is_user_connected()))
+	if GameManager.is_user_connected():
+		task_result.visible = true
+		task_result.text = "Caricando..."
 	$NumberOfShots.text = str(GameManager.shots) + "\n tiri"
 	winTimeLabel.text = str(GameManager.winTime) + "\nsecondi"
 	print(winTimeLabel.text)
