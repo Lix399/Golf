@@ -26,7 +26,6 @@ var saveData : SaveGame = null
 @onready var dragStart : Vector2
 @onready var maxForceVector : float = 500
 @onready var forceMult_normal : float = 2.4
-@onready var forceMult_crazy : float = 6
 @onready var username : String = ""
 
 # Called upon entering the scene tree

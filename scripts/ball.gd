@@ -121,7 +121,6 @@ func shootingForce() -> Vector2:
 
 func _on_cooldown_timeout() -> void:
 	Signals.cooldownOver.emit()
-	print("ORA PUOI TIRARE!!!!!!!!!!!")
 
 func respawnBall() -> void:
 	pendingRespawn = true
@@ -131,7 +130,6 @@ func respawnBall() -> void:
 func _on_respawn_time_timeout() -> void:
 	freeze = false
 	visible = true
-	print("Respawnato!!!!!")
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if pendingRespawn:

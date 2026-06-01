@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var hasShot = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	frame = 0
@@ -37,8 +38,9 @@ func on_hasRespawned(ballGbPosition) -> void:
 	setPosition(ballGbPosition)
 
 func on_isDragging(_dragStart, ballGbPosition) -> void:
-	if hasShot:
+	if hasShot: #????
 		setPosition(ballGbPosition)
+
 func setPosition(ballGbPosition):
 	global_position = ballGbPosition
 	global_position.y = global_position.y - 50
