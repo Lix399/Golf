@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var time: Label = $StopwatchLabel/TimeLabel
+@onready var shots: int = 0
 @onready var stopwatch: Label = $StopwatchLabel
 @onready var countdownNumber: Label = $CountdownLabel
 @onready var shootCdProgressBar: ProgressBar = $ShootCdProgressBar
@@ -10,15 +11,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Signals.loadingLevel.connect(on_loadingLevel)
 	Signals.cooldownStart.connect(on_cooldownStart)
 	Signals.cooldownOver.connect(on_cooldownOver)
 	Signals.hasWon.connect(on_hasWon)
-	Signals.tryAgain.connect(on_tryAgain)
 	Signals.isDragging.connect(on_isDragging)
-	Signals.shot.connect(on_shotOrReleased)
-	Signals.released.connect(on_shotOrReleased)
+	Signals.shot.connect(on_shot)
+	Signals.released.connect(on_released)
 	stylebox = aimingForceProgressBar.get_theme_stylebox("fill").duplicate()
+	
+	startCountDown()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,11 +29,6 @@ func _process(delta: float) -> void:
 		processCooldown()
 	if GameManager.isAiming:
 		processAiming()
-	
-	processIndicators()
-
-func processIndicators():
-	pass
 
 func processAiming() -> void:
 	var forceLength = GameManager.aimingForce.length()
@@ -59,29 +55,27 @@ func processStopwatch(delta) -> void:
 	GameManager.playTime += delta
 	time.text = str(GameManager.playTime).pad_decimals(3)
 
-func on_shotOrReleased() -> void:
+func on_shot() -> void:
+	shots += 1
+	$ShotsLabel/NumberOfShots.text = str(shots)
+	aimingForceProgressBar.visible = false
+
+func on_released() -> void:
 	aimingForceProgressBar.visible = false
 	
 func on_isDragging(_dragStart, _ballPosition) -> void:
 	aimingForceProgressBar.visible = true	
 	
-func on_tryAgain() -> void:
-	get_tree().reload_current_scene()
-	shootCdProgressBar.visible = false
-	stopwatch.visible = false
-	
 func on_hasWon() -> void:
 	stopwatch.visible = false
 	GameManager.winTime = time.text.pad_decimals(3).to_float()
+	GameManager.shots = shots
 
 func on_cooldownOver() -> void:
 	shootCdProgressBar.visible = false
 
 func on_cooldownStart(_lastPosition) -> void:
 	shootCdProgressBar.visible = true
-
-func on_loadingLevel(_levelPath) -> void:
-	startCountDown()
 
 func startCountDown() -> void:
 	countdownNumber.visible = true
@@ -94,5 +88,6 @@ func startCountDown() -> void:
 	await get_tree().create_timer(1).timeout
 	stopwatch.visible = true
 	countdownNumber.visible = false
+	$ShotsLabel.visible = true
 	get_tree().paused = false
 	Signals.countdownOver.emit()

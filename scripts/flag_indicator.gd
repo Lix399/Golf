@@ -69,6 +69,10 @@ func checkFlag():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	
+	print("posizione indicatore: " + str(get_global_transform_with_canvas().origin))
+	
 	screen_rect = get_viewport_rect()
 	
 	if not flag or not notifier:

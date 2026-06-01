@@ -1,6 +1,6 @@
 extends Camera2D
 @onready var areas = [$AreaUp, $AreaDown, $AreaRight, $AreaLeft]
-@onready var ball = null
+@onready var ball : Node2D= null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Signals.up_pressed.connect(on_up_pressed)
@@ -10,15 +10,19 @@ func _ready() -> void:
 	Signals.ball_ready.connect(on_ball_ready)
 	Signals.isDragging.connect(on_isDragging)
 	Signals.hasRespawned.connect(on_hasRespawned)
+	
+	#set_deferred("global_position", ball.global_position)
 
 func on_hasRespawned(ballPosition):
 	global_position = ballPosition
 
 func on_ball_ready(ballArg: Node2D):
 	self.ball = ballArg
-
-func on_loadingLevel():
-	global_position = GameManager.ballGbPosition
+	global_position = ball.global_position
+	reset_smoothing()
+#
+#func on_loadingLevel():
+	#global_position = GameManager.ballGbPosition
 
 func on_isDragging(_dragStart, ballPosition):
 	global_position = ballPosition

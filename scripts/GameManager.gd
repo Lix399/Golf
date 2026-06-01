@@ -7,6 +7,7 @@ var saveData : SaveGame = null
 
 @onready var level_online_times
 @onready var playTime : float = 0
+@onready var shots : int = 0
 @onready var levelPath : String
 @onready var levelNumber : int
 @onready var levelString : String
@@ -35,7 +36,6 @@ func _ready() -> void:
 	#crea o carica i dati di salvataggio
 	if ResourceLoader.exists(SAVE_PATH):
 		saveData = ResourceLoader.load(SAVE_PATH, "", ResourceLoader.CACHE_MODE_IGNORE)
-		print("Size: " + str(saveData.times.size()))
 	else:
 		saveData = SaveGame.new()
 		ResourceSaver.save(saveData, SAVE_PATH)
@@ -118,6 +118,7 @@ func on_resumed() -> void:
 
 func on_resetState() -> void:
 	playTime = 0
+	shots = 0
 	levelNumber = -1
 	levelString = "null"
 	winTime = -1
@@ -139,10 +140,10 @@ func on_tryAgain() -> void:
 	
 	
 func on_loadingLevel(levelPathParameter) -> void:
+	shots = 0
 	insideLevel = true
 	levelPath = levelPathParameter
 	levelNumber = (levelPath.substr(18, levelPath.length() - levelPath.find(".") - 4)).to_int()
-	print("Level number: " + str(levelNumber) + ", level path: " + str(levelPathParameter))
 	levelString = "level_" + str(levelNumber)
 	
 func on_hasRespawned(_lastPosition) -> void:

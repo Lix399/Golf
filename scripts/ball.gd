@@ -24,7 +24,7 @@ func _ready() -> void:
 	Signals.has_exited_sand.connect(on_has_exited_sand)
 	Signals.has_touched_water.connect(on_has_touched_water)
 	
-	Signals.ball_ready.emit(self)
+	Signals.ball_ready.emit.call_deferred(self)
 
 func _input(event):
 	if event is InputEventMouseButton:

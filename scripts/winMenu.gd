@@ -9,7 +9,6 @@ extends Node2D
 func _ready() -> void:
 	Signals.ballInHole.connect(on_ballInHole)
 	Signals.hasWon.connect(on_hasWon)
-	Signals.tryAgain.connect(on_tryAgain)
 	Signals.resetState.connect(on_resetState)
 	Signals.newRecord.connect(on_newRecord)
 	Signals.task_succeeded.connect(on_task_succeeded)
@@ -32,8 +31,6 @@ func on_task_failed():
 func on_resetState() -> void:
 	newRecord.visible = false
 	
-func on_tryAgain() -> void:
-	newRecord.visible = false
 	
 func on_newRecord() -> void:
 	newRecord.visible = true

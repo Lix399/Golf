@@ -33,7 +33,45 @@ bg_color = Color(1, 0, 0, 1)
 [node name="PlayMenu" type="Node2D" unique_id=1071620559]
 script = ExtResource("1_wk0aj")
 
+[node name="ShotsLabel" type="Label" parent="." unique_id=1421160395 groups=["PlayMenuElement"]]
+visible = false
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1638.0
+offset_top = 1026.0
+offset_right = 1701.0
+offset_bottom = 1063.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TIRI"
+label_settings = SubResource("LabelSettings_djjb2")
+
+[node name="NumberOfShots" type="Label" parent="ShotsLabel" unique_id=664360209]
+visibility_layer = 512
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -18.5
+offset_right = -43.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_djjb2")
+horizontal_alignment = 2
+
 [node name="StopwatchLabel" type="Label" parent="." unique_id=240585392 groups=["PlayMenuElement"]]
+visible = false
 visibility_layer = 512
 z_index = 10
 anchors_preset = 8
@@ -69,7 +107,6 @@ text = "0"
 label_settings = SubResource("LabelSettings_djjb2")
 
 [node name="CountdownLabel" type="Label" parent="." unique_id=951965574 groups=["PlayMenuElement"]]
-visible = false
 offset_left = 907.0
 offset_top = 490.0
 offset_right = 977.0

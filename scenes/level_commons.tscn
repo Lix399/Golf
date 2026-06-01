@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5611vwvogos4"]
+
+[ext_resource type="PackedScene" uid="uid://c0d8njtingqsd" path="res://scenes/LevelGUI.tscn" id="1_1egjl"]
+[ext_resource type="PackedScene" uid="uid://fbqlo0juv20x" path="res://scenes/Camera.tscn" id="2_x62d5"]
+
+[node name="LevelCommons" type="Node2D" unique_id=895105643]
+
+[node name="LevelGUI" parent="." unique_id=594278634 instance=ExtResource("1_1egjl")]
+
+[node name="Camera" parent="." unique_id=1949422700 instance=ExtResource("2_x62d5")]
+process_mode = 3
