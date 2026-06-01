@@ -36,6 +36,7 @@ func on_newRecord() -> void:
 	newRecord.visible = true
 	
 func on_hasWon() -> void:
+	$NumberOfShots.text = str(GameManager.shots) + "\n tiri"
 	winTimeLabel.text = str(GameManager.winTime) + "\nsecondi"
 	print(winTimeLabel.text)
 	

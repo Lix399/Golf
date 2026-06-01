@@ -26,7 +26,9 @@ shadow_offset = Vector2(0, 3.75)
 
 [sub_resource type="LabelSettings" id="LabelSettings_44pu4"]
 font_size = 31
-font_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.49019608)
+shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtub8"]
 
@@ -44,9 +46,9 @@ z_index = 10
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 787.0
+offset_left = 777.0
 offset_top = 62.0
-offset_right = 1140.0
+offset_right = 1130.0
 offset_bottom = 140.0
 grow_horizontal = 2
 text = "hai vinto"
@@ -59,14 +61,33 @@ z_index = 10
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 786.0
+offset_left = 775.0
 offset_top = 206.0
-offset_right = 1342.0
+offset_right = 1331.0
 offset_bottom = 284.0
 grow_horizontal = 2
 scale = Vector2(0.64000034, 0.64000034)
 text = "nuovo record!"
 label_settings = SubResource("LabelSettings_y4ssr")
+
+[node name="NumberOfShots" type="Label" parent="." unique_id=380767819]
+visibility_layer = 512
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 833.0
+offset_top = 696.0
+offset_right = 1062.0
+offset_bottom = 821.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+tiri"
+label_settings = SubResource("LabelSettings_4dhvd")
+horizontal_alignment = 1
 
 [node name="WinTimeLabel" type="Label" parent="." unique_id=1306230377]
 visibility_layer = 512
@@ -76,24 +97,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 849.5
+offset_left = 836.5
 offset_top = 854.0
-offset_right = 1078.5
+offset_right = 1065.5
 offset_bottom = 979.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "
 Secondi"
 label_settings = SubResource("LabelSettings_4dhvd")
+horizontal_alignment = 1
 
 [node name="TaskResult" type="Label" parent="." unique_id=1789169439]
-visible = false
 visibility_layer = 512
 z_index = 10
-offset_left = 717.0
-offset_top = 352.0
-offset_right = 1206.0
-offset_bottom = 472.0
+offset_left = 701.0
+offset_top = 338.0
+offset_right = 1190.0
+offset_bottom = 458.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "text"
@@ -109,9 +130,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 859.5
+offset_left = 846.5
 offset_top = 483.5
-offset_right = 1059.5
+offset_right = 1046.5
 offset_bottom = 629.5
 grow_horizontal = 2
 grow_vertical = 2

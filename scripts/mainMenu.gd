@@ -120,7 +120,7 @@ func _on_level_pressed(levelPressed) -> void:
 	levelIcon.texture = load(iconPath)
 	levelInfo.visible = true
 	if GameManager.saveData.times.get(selectedLevel) > 0:
-		your_time.text = str(GameManager.saveData.times.get(selectedLevel))
+		your_time.text = "tiri: " + str(GameManager.saveData.shots.get(selectedLevel)) +", "+ str(GameManager.saveData.times.get(selectedLevel))
 	else:
 		your_time.text = "record non ancora salvato"
 	your_time.visible = true

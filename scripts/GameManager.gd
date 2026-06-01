@@ -100,9 +100,12 @@ func setFullscreen():
 
 func registerNewTime():
 	print("level number  in register new time : " + str(levelNumber))
-	if saveData.times.get(levelNumber) == -1 || winTime < saveData.times.get(levelNumber):
+	if saveData.times.get(levelNumber) == -1 \
+		or shots < saveData.shots.get(levelNumber) \
+		or winTime < saveData.times.get(levelNumber):
 		print("Nuovo record in register new time, win time: " +str (winTime))
 		saveData.times.set(levelNumber, winTime)
+		saveData.shots.set(levelNumber, shots)
 		print("Salvato!: " , str(ResourceSaver.save(saveData, SAVE_PATH)))
 		Signals.newRecord.emit()
 
