@@ -71,6 +71,7 @@ func _physics_process(_delta: float) -> void:
 		Signals.left_pressed.emit()
 	if Input.is_action_pressed("Right"):
 		Signals.right_pressed.emit()
+		
 
 func _input(input: InputEvent) -> void:
 	if input.is_action_pressed("Escape"):
@@ -98,13 +99,15 @@ func setFullscreen():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func registerNewTime():
+	print("level number  in register new time : " + str(levelNumber))
 	if saveData.times.get(levelNumber) == -1 || winTime < saveData.times.get(levelNumber):
+		print("Nuovo record in register new time, win time: " +str (winTime))
 		saveData.times.set(levelNumber, winTime)
 		print("Salvato!: " , str(ResourceSaver.save(saveData, SAVE_PATH)))
 		Signals.newRecord.emit()
 
 func on_hasWon() -> void:
-	registerNewTime()
+	call_deferred("registerNewTime")
 	if Cloud.conn_established == 0 and !username.is_empty():
 		Cloud.save_time()
 

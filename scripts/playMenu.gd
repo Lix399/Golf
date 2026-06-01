@@ -67,7 +67,8 @@ func on_isDragging(_dragStart, _ballPosition) -> void:
 	aimingForceProgressBar.visible = true	
 	
 func on_hasWon() -> void:
-	stopwatch.visible = false
+	visible = false
+	print("win time in play menu" + str(time.text.pad_decimals(3).to_float()))
 	GameManager.winTime = time.text.pad_decimals(3).to_float()
 	GameManager.shots = shots
 
